@@ -14,7 +14,7 @@ class CompteBanck extends GetxController {
   }
 
   void fetchAllCodeBanck() async {
-    final response = await _apiProvider.getAgent();
+    final response = await _apiProvider.getCart();
     numbanck.value = response.map((data) =>ComptebanckModel.fromJson(data)).toList();
   }
   

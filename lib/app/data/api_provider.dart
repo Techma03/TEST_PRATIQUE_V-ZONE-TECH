@@ -42,13 +42,13 @@ class ApiProvider {
   }
 
   Future<Map<String, dynamic>?> updateCart(
-      int id, String name, String description) async {
+       String numcart) async {
     final url = Uri.parse("$baseUrl/addCart");
     try {
       final response = await http.put(
         url,
         headers: {'Content-Type': 'application/json'},
-        body: jsonEncode({'id': id, 'name': name,}),
+        body: jsonEncode({'numcart':numcart}),
       );
       if (response.statusCode == 200) {
         final Map<String, dynamic> responseBody = jsonDecode(response.body);
